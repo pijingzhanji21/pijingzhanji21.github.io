@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-12-07T13:20:51.844Z</updated>
+  <updated>2018-12-08T12:15:28.024Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何给ip列表排序</title>
+    <link href="http://yoursite.com/2018/12/08/%E5%A6%82%E4%BD%95%E7%BB%99ip%E5%88%97%E8%A1%A8%E6%8E%92%E5%BA%8F/"/>
+    <id>http://yoursite.com/2018/12/08/如何给ip列表排序/</id>
+    <published>2018-12-08T11:33:24.000Z</published>
+    <updated>2018-12-08T12:15:28.024Z</updated>
+    
+    <content type="html"><![CDATA[<p>本文用shell和python分别实现对ip地址的排序</p><p>shell方法：<br>使用sort命令<br>sort -t “.” -k1,1n -k2,2n -k3,3n -k4,4n ip.txt</p><p>python方法<br>使用sort函数<br>ip=[‘10.12.2.1’, ‘10.2.1.1’, ‘10.3.1.1’]<br>根据cmp函数<br>ip_list.sort(lambda x,y: cmp(‘’.join( [ i.rjust(3, ‘0’) for i in x.split(‘.’)] ), ‘’.join( [ i.rjust(3, ‘0’) for i in y.split(‘.’)])))</p><blockquote><blockquote><blockquote><p>print ip_list<br>[‘10.2.1.1’, ‘10.3.1.1’, ‘10.12.2.1’]<br>或者<br>根据key参数<br>ip_list.sort(key=lambda y:(y.split(“.”)[0], int(y.split(“.”)[1]),int( y.split(“.”)[2]),int( y.split(“.”)[3])))<br>print ip_list<br>[‘10.2.1.1’, ‘10.3.1.1’, ‘10.12.2.1’]</p></blockquote></blockquote></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;本文用shell和python分别实现对ip地址的排序&lt;/p&gt;
+&lt;p&gt;shell方法：&lt;br&gt;使用sort命令&lt;br&gt;sort -t “.” -k1,1n -k2,2n -k3,3n -k4,4n ip.txt&lt;/p&gt;
+&lt;p&gt;python方法&lt;br&gt;使用sort函数&lt;br&gt;
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
